@@ -7,3 +7,9 @@ Content-Type: application/json
     "email": "vie-scolaire1@test.com",
     "password": "$2y$12$TJy1uk4VqF5.I3LLtaELNObOGjjB/UE1FsZvYGEqQ1yZucDrtugYO"
 }
+
+###
+GET {{baseURL}}/eleves?prenom=Jean HTTP/1.1
+
+###
+
