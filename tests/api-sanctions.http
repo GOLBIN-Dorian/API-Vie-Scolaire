@@ -8,8 +8,15 @@ Content-Type: application/json
     "password": "$2y$12$TJy1uk4VqF5.I3LLtaELNObOGjjB/UE1FsZvYGEqQ1yZucDrtugYO"
 }
 
-###
+### Recherche d'un élève avec son prénom
 GET {{baseURL}}/eleves?prenom=Jean HTTP/1.1
 
-###
+### Recherche d'un élève avec son nom
+GET {{baseURL}}/eleves?nom=Dubois HTTP/1.1
 
+### Recherche d'un élève avec son nom et son prénom
+GET {{baseURL}}/eleves?nom=Dubois&prenom=Marie HTTP/1.1
+
+### Historique de sanction d'un élève par son id
+
+GET {{baseURL}}/eleves/5/sanctions HTTP/1.1

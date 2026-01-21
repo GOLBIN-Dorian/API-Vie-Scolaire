@@ -222,11 +222,9 @@ Contraintes fonctionnelles attendues :
 * Historique complet :
 
   * `GET /api/eleves/12/sanctions`
-
 * Depuis une date :
 
   * `GET /api/eleves/12/sanctions?from=01/01/2026`
-
 * Sur une période :
 
   * `GET /api/eleves/12/sanctions?from=01/01/2026&to=31/01/2026`

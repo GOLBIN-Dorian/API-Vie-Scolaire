@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
-import sanctionsRouter from "./routes/sanctions-db-routes.js";
+import jwt from "jsonwebtoken";
+import sanctionsRouter from "./routes/sanctions-routes.js";
+import authRouter from "./routes/auth-routes.js";
 
 // configurer les variables d'environnement
 dotenv.config(); // Permet de rendre dispo les VE dans process.env
@@ -9,11 +11,14 @@ dotenv.config(); // Permet de rendre dispo les VE dans process.env
 const app = express();
 const PORT = process.env.PORT;
 
+// Middleware afin d'analyser le token
+
 //Middleware pour parser(analyser) le contenu des requêtes contenant du JSON
 app.use(express.json());
 
 // Utiliser le router pour les films (Monter les routes)
 app.use("/api", sanctionsRouter);
+app.use("/api", authRouter);
 
 // Gérer les routes non trouvées (404)
 // Utiliser un middleware
