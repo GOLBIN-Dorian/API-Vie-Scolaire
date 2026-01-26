@@ -11,8 +11,6 @@ dotenv.config(); // Permet de rendre dispo les VE dans process.env
 const app = express();
 const PORT = process.env.PORT;
 
-// Middleware afin d'analyser le token
-
 //Middleware pour parser(analyser) le contenu des requêtes contenant du JSON
 app.use(express.json());
 
