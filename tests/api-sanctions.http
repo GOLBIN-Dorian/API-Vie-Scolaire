@@ -20,3 +20,11 @@ GET {{baseURL}}/eleves?nom=Dubois&prenom=Marie HTTP/1.1
 ### Historique de sanction d'un élève par son id
 
 GET {{baseURL}}/eleves/5/sanctions HTTP/1.1
+
+### Historique de sanction d'un élève par son id le queryParameter from
+
+GET {{baseURL}}/eleves/5/sanctions?from=01/01/2025 HTTP/1.1
+
+### Historique de sanction d'un élève par son id les queryParameter from et to
+
+GET {{baseURL}}/eleves/5/sanctions?from=01/01/2025&to=31/12/2025 HTTP/1.1
