@@ -25,6 +25,12 @@ VALUES
         '$2y$12$TJy1uk4VqF5.I3LLtaELNObOGjjB/UE1FsZvYGEqQ1yZucDrtugYO',
         'Dubois',
         'Pierre'
+    ),
+    (
+        'admin@test.com',
+        '$argon2id$v=19$m=16,t=2,p=1$bjlKNjVWNGhWaVVaVlNndQ$PqTaf+FmdDc3WIRtQhlZxQ',
+        'admin',
+        'test'
     ) ON DUPLICATE KEY
 UPDATE email = email;
 

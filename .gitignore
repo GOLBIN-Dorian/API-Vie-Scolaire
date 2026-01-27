@@ -28,6 +28,7 @@ build/
 .env.test
 .env.production
 .env.*.local
+.env
 
 # Base de données
 *.sqlite
