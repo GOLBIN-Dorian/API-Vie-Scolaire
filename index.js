@@ -5,7 +5,7 @@ import sanctionsRouter from "./routes/sanctions-routes.js";
 import authRouter from "./routes/auth-routes.js";
 
 // configurer les variables d'environnement
-dotenv.config(); // Permet de rendre dispo les VE dans process.env
+dotenv.config();
 
 // Créer une application express
 const app = express();
@@ -19,7 +19,6 @@ app.use("/api", sanctionsRouter);
 app.use("/api", authRouter);
 
 // Gérer les routes non trouvées (404)
-// Utiliser un middleware
 // Capturer toutes les requêtes qui n'ont pas été matchées  par les routes précédentes
 app.use((req, rep) => {
   rep.status(404).send("Route non trouvée");

@@ -1,6 +1,5 @@
 import express from "express";
 import pool from "../config/db.js";
-import jwt from "jsonwebtoken";
 import authenticateToken from "../middlewares/auth.js";
 
 const router = express.Router();
