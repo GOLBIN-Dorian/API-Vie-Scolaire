@@ -1,6 +1,7 @@
 import express from "express";
 import pool from "../config/db.js";
 import jwt from "jsonwebtoken";
+import argon2 from "argon2";
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router.post("/auth/login", async (req, rep) => {
   const { email, password } = req.body;
   try {
     const [utilisateurs] = await pool.execute(
-      "SELECT id, mot_de_passe FROM utilisateurs WHERE email = ?",
+      "SELECT id, email, mot_de_passe FROM utilisateurs WHERE email = ?",
       [email],
     );
 
@@ -20,13 +21,13 @@ router.post("/auth/login", async (req, rep) => {
 
     const mot_de_passeBDD = utilisateurs[0].mot_de_passe;
 
-    if (password !== mot_de_passeBDD) {
+    if (!(await argon2.verify(mot_de_passeBDD, password))) {
       return rep.status(401).json({ message: "Identifiants incorrects" });
     }
 
     const payload = { id: utilisateurs[0].id, email: utilisateurs[0].email };
 
-    const CLE = process.env.CLE_SECRETE;
+    const CLE = process.env.JWT_SECRET;
 
     const token = jwt.sign(payload, CLE, { expiresIn: "1h" });
 
