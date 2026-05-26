@@ -27,10 +27,10 @@ VALUES
         'Pierre'
     ),
     (
-        'admin@test.com',
-        '$argon2id$v=19$m=16,t=2,p=1$bjlKNjVWNGhWaVVaVlNndQ$PqTaf+FmdDc3WIRtQhlZxQ',
-        'admin',
-        'test'
+        'test@test.fr',
+        '$argon2id$v=19$m=65536,t=3,p=4$sdsMAcuy0NA+bPJeqr3//Q$NvUlk5VgPmlkLKj1qE7AU/0IbwJaT5JAjoLjw1D3KRw',
+        'Utilisateur',
+        'Test'
     ) ON DUPLICATE KEY
 UPDATE email = email;
 

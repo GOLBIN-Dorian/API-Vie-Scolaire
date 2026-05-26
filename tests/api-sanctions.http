@@ -2,14 +2,14 @@
 
 
 
-@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiZW1haWwiOiJ2aWUtc2NvbGFpcmUxQHRlc3QuY29tIiwiaWF0IjoxNzY5NTA2NTgwLCJleHAiOjE3Njk1MTAxODB9.TWwgXp6f2zMmMUSN_3HdH-L2INqKx8p_U20SZeHP_p4
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiZW1haWwiOiJ0ZXN0QHRlc3QuZnIiLCJpYXQiOjE3Nzk4MTQ1NTQsImV4cCI6MTc3OTgxODE1NH0.A_LUV5-zY8PM3taMlpI_SAiQgAV4UkMRbGXbhiheqE0
 
 POST {{baseURL}}/auth/login HTTP/1.1
 Content-Type: application/json
 
 {
-    "email": "admin@test.com",
-    "password": "test"
+    "email": "test@test.fr",
+    "password": "Test1234"
 }
 
 ### Recherche d'un élève avec son prénom
